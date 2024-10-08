@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <title>Success Page</title>
+    <style>
+        .id-card {
+            border: 1px solid #ddd;
+            padding: 10px;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .id-card img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+
+        .container {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center mb-4">Generated ID Card</h1>
+        <div class="row justify-content-center">
+            <div class="col-md-5 id-card">
+                <h4 class="text-center">Front Side</h4>
+                <img src="{{ front_image }}" alt="Front ID Card">
+            </div>
+            <div class="col-md-5 id-card ml-md-4 mt-4 mt-md-0">
+                <h4 class="text-center">Back Side</h4>
+                <img src="{{ back_image }}" alt="Back ID Card">
+            </div>
+        </div>
+        <div class="text-center mt-4">
+            <a href="{% url 'porfa:download_id_card_pdf' porfa_id=porfa_id %}" class="btn btn-primary">Download ID Card PDF</a>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
